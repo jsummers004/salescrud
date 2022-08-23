@@ -500,7 +500,7 @@ class CustomerModel(Base):
 class MerchantModel(Base):
     __tablename__ = "merchant"
     merchant_id=Column(Integer,primary_key=True,nullable=False)
-    
+    mid=Column(String(20), unique=True)
     dba_name=Column(String(100),nullable=False)
     
     legal_name=Column(String(100))
