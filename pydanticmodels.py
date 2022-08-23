@@ -32,7 +32,7 @@ class RefOrderStatusUpdate(BaseModel):
 
 class RefRefundPolicy(BaseModel):
     
-    refund_policy_id:str=Field(max_length=15)
+    refund_policy_id:int
     name:str=Field(max_length=30)
     created_on:Optional[datetime]
     modified_on:Optional[datetime]
@@ -44,7 +44,7 @@ class RefRefundPolicy(BaseModel):
     
 class RefRefundPolicyCreate(BaseModel):
     
-    refund_policy_id:str=Field(max_length=15)
+    refund_policy_id:int
     name:str=Field(max_length=30)
     created_by:int
     class Config:
@@ -52,7 +52,7 @@ class RefRefundPolicyCreate(BaseModel):
     
 class RefRefundPolicyUpdate(BaseModel):
     
-    refund_policy_id:str=Field(max_length=15)
+    refund_policy_id:int
     name:str=Field(max_length=30)
     modified_by:Optional[int]
     class Config:
@@ -61,7 +61,7 @@ class RefRefundPolicyUpdate(BaseModel):
 
 class RefProductDelivery(BaseModel):
     
-    product_delivery_id:str=Field(max_length=15)
+    product_delivery_id:int
     name:str=Field(max_length=30)
     created_on:Optional[datetime]
     modified_on:Optional[datetime]
@@ -73,7 +73,7 @@ class RefProductDelivery(BaseModel):
     
 class RefProductDeliveryCreate(BaseModel):
     
-    product_delivery_id:str=Field(max_length=15)
+    product_delivery_id:int
     name:str=Field(max_length=30)
     created_by:int
     class Config:
@@ -81,7 +81,7 @@ class RefProductDeliveryCreate(BaseModel):
     
 class RefProductDeliveryUpdate(BaseModel):
     
-    product_delivery_id:str=Field(max_length=15)
+    product_delivery_id:int
     name:str=Field(max_length=30)
     modified_by:Optional[int]
     class Config:
@@ -90,7 +90,7 @@ class RefProductDeliveryUpdate(BaseModel):
 
 class RefOwnershipType(BaseModel):
     
-    ownership_type_id:str=Field(max_length=15)
+    ownership_type_id:int
     name:str=Field(max_length=30)
     created_on:Optional[datetime]
     modified_on:Optional[datetime]
@@ -102,7 +102,7 @@ class RefOwnershipType(BaseModel):
     
 class RefOwnershipTypeCreate(BaseModel):
     
-    ownership_type_id:str=Field(max_length=15)
+    ownership_type_id:int
     name:str=Field(max_length=30)
     created_by:int
     class Config:
@@ -110,7 +110,7 @@ class RefOwnershipTypeCreate(BaseModel):
     
 class RefOwnershipTypeUpdate(BaseModel):
     
-    ownership_type_id:str=Field(max_length=15)
+    ownership_type_id:int
     name:str=Field(max_length=30)
     modified_by:Optional[int]
     class Config:
@@ -119,7 +119,7 @@ class RefOwnershipTypeUpdate(BaseModel):
 
 class RefMerchantStatus(BaseModel):
     
-    merchant_status_id:str=Field(max_length=15)
+    merchant_status_id:int
     name:str=Field(max_length=30)
     created_on:Optional[datetime]
     modified_on:Optional[datetime]
@@ -131,7 +131,7 @@ class RefMerchantStatus(BaseModel):
     
 class RefMerchantStatusCreate(BaseModel):
     
-    merchant_status_id:str=Field(max_length=15)
+    merchant_status_id:int
     name:str=Field(max_length=30)
     created_by:int
     class Config:
@@ -139,7 +139,7 @@ class RefMerchantStatusCreate(BaseModel):
     
 class RefMerchantStatusUpdate(BaseModel):
     
-    merchant_status_id:str=Field(max_length=15)
+    merchant_status_id:int
     name:str=Field(max_length=30)
     modified_by:Optional[int]
     class Config:
@@ -175,7 +175,7 @@ class RefPermissionUpdate(BaseModel):
 
 class RefTicketStatus(BaseModel):
     
-    ticket_status_id:str=Field(max_length=15)
+    ticket_status_id:int
     name:str=Field(max_length=30)
     created_on:Optional[datetime]
     modified_on:Optional[datetime]
@@ -187,7 +187,7 @@ class RefTicketStatus(BaseModel):
     
 class RefTicketStatusCreate(BaseModel):
     
-    ticket_status_id:str=Field(max_length=15)
+    ticket_status_id:int
     name:str=Field(max_length=30)
     created_by:int
     class Config:
@@ -195,7 +195,7 @@ class RefTicketStatusCreate(BaseModel):
     
 class RefTicketStatusUpdate(BaseModel):
     
-    ticket_status_id:str=Field(max_length=15)
+    ticket_status_id:int
     name:str=Field(max_length=30)
     modified_by:Optional[int]
     class Config:
@@ -234,7 +234,7 @@ class RefFeeUpdate(BaseModel):
 
 class RefAddressType(BaseModel):
     
-    address_type_id:str=Field(max_length=15)
+    address_type_id:int
     name:str=Field(max_length=30)
     created_on:Optional[datetime]
     modified_on:Optional[datetime]
@@ -246,7 +246,7 @@ class RefAddressType(BaseModel):
     
 class RefAddressTypeCreate(BaseModel):
     
-    address_type_id:str=Field(max_length=15)
+    address_type_id:int
     name:str=Field(max_length=30)
     created_by:int
     class Config:
@@ -254,7 +254,7 @@ class RefAddressTypeCreate(BaseModel):
     
 class RefAddressTypeUpdate(BaseModel):
     
-    address_type_id:str=Field(max_length=15)
+    address_type_id:int
     name:str=Field(max_length=30)
     modified_by:Optional[int]
     class Config:
@@ -317,7 +317,7 @@ class MerchantBoardingPlatformUpdate(BaseModel):
 
 class RefBackEndPlatform(BaseModel):
     
-    back_end_platform_id:str=Field(max_length=15)
+    back_end_platform_id:int
     name:str=Field(max_length=30)
     created_on:Optional[datetime]
     modified_on:Optional[datetime]
@@ -329,7 +329,7 @@ class RefBackEndPlatform(BaseModel):
     
 class RefBackEndPlatformCreate(BaseModel):
     
-    back_end_platform_id:str=Field(max_length=15)
+    back_end_platform_id:int
     name:str=Field(max_length=30)
     created_by:int
     class Config:
@@ -337,7 +337,7 @@ class RefBackEndPlatformCreate(BaseModel):
     
 class RefBackEndPlatformUpdate(BaseModel):
     
-    back_end_platform_id:str=Field(max_length=15)
+    back_end_platform_id:int
     name:str=Field(max_length=30)
     modified_by:Optional[int]
     class Config:
@@ -349,7 +349,7 @@ class RefMbpBackEnd(BaseModel):
     mbp_back_end_id:int
     mbp_id:int
     mbp_ref:Optional[MerchantBoardingPlatform]
-    back_end_platform_id:str=Field(max_length=15)
+    back_end_platform_id:int
     back_end_platform_ref:Optional[RefBackEndPlatform]
     created_on:Optional[datetime]
     modified_on:Optional[datetime]
@@ -362,7 +362,7 @@ class RefMbpBackEnd(BaseModel):
 class RefMbpBackEndCreate(BaseModel):
     
     mbp_id:int
-    back_end_platform_id:str=Field(max_length=15)
+    back_end_platform_id:int
     created_by:int
     class Config:
         orm_mode = True
@@ -370,7 +370,7 @@ class RefMbpBackEndCreate(BaseModel):
 class RefMbpBackEndUpdate(BaseModel):
     
     mbp_id:int
-    back_end_platform_id:str=Field(max_length=15)
+    back_end_platform_id:int
     modified_by:Optional[int]
     class Config:
         orm_mode = True
@@ -497,7 +497,7 @@ class RefScheduleACreate(BaseModel):
 class RefScheduleAUpdate(BaseModel):
     
     name:str=Field(max_length=30)
-    cost_type:str=Field(max_length=15)
+    cost_type:int
     modified_by:Optional[int]
     class Config:
         orm_mode = True
@@ -505,7 +505,7 @@ class RefScheduleAUpdate(BaseModel):
 
 class RefProcessor(BaseModel):
     
-    processor_id:str=Field(max_length=15)
+    processor_id:int
     name:str=Field(max_length=30)
     created_on:Optional[datetime]
     modified_on:Optional[datetime]
@@ -517,7 +517,7 @@ class RefProcessor(BaseModel):
     
 class RefProcessorCreate(BaseModel):
     
-    processor_id:str=Field(max_length=15)
+    processor_id:int
     name:str=Field(max_length=30)
     created_by:int
     class Config:
@@ -525,7 +525,7 @@ class RefProcessorCreate(BaseModel):
     
 class RefProcessorUpdate(BaseModel):
     
-    processor_id:str=Field(max_length=15)
+    processor_id:int
     name:str=Field(max_length=30)
     modified_by:Optional[int]
     class Config:
@@ -537,7 +537,7 @@ class RefScheduleAMap(BaseModel):
     schedule_a_map_id:int
     schedule_a_id:int
     schedule_a_ref:Optional[RefScheduleA]
-    processor_id:str=Field(max_length=15)
+    processor_id:int
     processor_ref:Optional[RefProcessor]
     fee_code:str=Field(max_length=30)
     created_on:Optional[datetime]
@@ -551,7 +551,7 @@ class RefScheduleAMap(BaseModel):
 class RefScheduleAMapCreate(BaseModel):
     
     schedule_a_id:int
-    processor_id:str=Field(max_length=15)
+    processor_id:int
     fee_code:str=Field(max_length=30)
     created_by:int
     class Config:
@@ -560,7 +560,7 @@ class RefScheduleAMapCreate(BaseModel):
 class RefScheduleAMapUpdate(BaseModel):
     
     schedule_a_id:int
-    processor_id:str=Field(max_length=15)
+    processor_id:int
     fee_code:str=Field(max_length=30)
     modified_by:Optional[int]
     class Config:
@@ -569,7 +569,7 @@ class RefScheduleAMapUpdate(BaseModel):
 
 class RefCardType(BaseModel):
     
-    card_type_id:str=Field(max_length=15)
+    card_type_id:int
     name:str=Field(max_length=30)
     created_on:Optional[datetime]
     modified_on:Optional[datetime]
@@ -581,7 +581,7 @@ class RefCardType(BaseModel):
     
 class RefCardTypeCreate(BaseModel):
     
-    card_type_id:str=Field(max_length=15)
+    card_type_id:int
     name:str=Field(max_length=30)
     created_by:int
     class Config:
@@ -589,7 +589,7 @@ class RefCardTypeCreate(BaseModel):
     
 class RefCardTypeUpdate(BaseModel):
     
-    card_type_id:str=Field(max_length=15)
+    card_type_id:int
     name:str=Field(max_length=30)
     modified_by:Optional[int]
     class Config:
@@ -598,7 +598,7 @@ class RefCardTypeUpdate(BaseModel):
 
 class RefAttachmentType(BaseModel):
     
-    attachment_type_id:str=Field(max_length=15)
+    attachment_type_id:int
     name:str=Field(max_length=30)
     created_on:Optional[datetime]
     modified_on:Optional[datetime]
@@ -610,7 +610,7 @@ class RefAttachmentType(BaseModel):
     
 class RefAttachmentTypeCreate(BaseModel):
     
-    attachment_type_id:str=Field(max_length=15)
+    attachment_type_id:int
     name:str=Field(max_length=30)
     created_by:int
     class Config:
@@ -618,7 +618,7 @@ class RefAttachmentTypeCreate(BaseModel):
     
 class RefAttachmentTypeUpdate(BaseModel):
     
-    attachment_type_id:str=Field(max_length=15)
+    attachment_type_id:int
     name:str=Field(max_length=30)
     modified_by:Optional[int]
     class Config:
@@ -627,7 +627,8 @@ class RefAttachmentTypeUpdate(BaseModel):
 
 class RefState(BaseModel):
     
-    state_id:str=Field(max_length=2)
+    state_id:int
+    state_code:str=Field(max_length=2)
     name:str=Field(max_length=30)
     created_on:Optional[datetime]
     modified_on:Optional[datetime]
@@ -639,7 +640,7 @@ class RefState(BaseModel):
     
 class RefStateCreate(BaseModel):
     
-    state_id:str=Field(max_length=2)
+    state_code:str=Field(max_length=2)
     name:str=Field(max_length=30)
     created_by:int
     class Config:
@@ -647,7 +648,7 @@ class RefStateCreate(BaseModel):
     
 class RefStateUpdate(BaseModel):
     
-    state_id:str=Field(max_length=2)
+    state_code:str=Field(max_length=2)
     name:str=Field(max_length=30)
     modified_by:Optional[int]
     class Config:
@@ -656,7 +657,7 @@ class RefStateUpdate(BaseModel):
 
 class RefUserType(BaseModel):
     
-    user_type_id:str=Field(max_length=15)
+    user_type_id:int
     name:str=Field(max_length=30)
     created_on:Optional[datetime]
     modified_on:Optional[datetime]
@@ -668,7 +669,7 @@ class RefUserType(BaseModel):
     
 class RefUserTypeCreate(BaseModel):
     
-    user_type_id:str=Field(max_length=15)
+    user_type_id:int
     name:str=Field(max_length=30)
     created_by:int
     class Config:
@@ -676,7 +677,7 @@ class RefUserTypeCreate(BaseModel):
     
 class RefUserTypeUpdate(BaseModel):
     
-    user_type_id:str=Field(max_length=15)
+    user_type_id:int
     name:str=Field(max_length=30)
     modified_by:Optional[int]
     class Config:
@@ -685,7 +686,7 @@ class RefUserTypeUpdate(BaseModel):
 
 class RefSalesPersonType(BaseModel):
     
-    sales_person_type_id:str=Field(max_length=15)
+    sales_person_type_id:int
     name:str=Field(max_length=30)
     created_on:Optional[datetime]
     modified_on:Optional[datetime]
@@ -697,7 +698,7 @@ class RefSalesPersonType(BaseModel):
     
 class RefSalesPersonTypeCreate(BaseModel):
     
-    sales_person_type_id:str=Field(max_length=15)
+    sales_person_type_id:int
     name:str=Field(max_length=30)
     created_by:int
     class Config:
@@ -705,7 +706,7 @@ class RefSalesPersonTypeCreate(BaseModel):
     
 class RefSalesPersonTypeUpdate(BaseModel):
     
-    sales_person_type_id:str=Field(max_length=15)
+    sales_person_type_id:int
     name:str=Field(max_length=30)
     modified_by:Optional[int]
     class Config:
@@ -715,7 +716,7 @@ class RefSalesPersonTypeUpdate(BaseModel):
 class RefMcc(BaseModel):
     
     mcc_id:int
-    name:str=Field(max_length=100)
+    name:str=Field(max_length=255)
     mcc_code:str=Field(max_length=15)
     created_on:Optional[datetime]
     modified_on:Optional[datetime]
@@ -744,7 +745,7 @@ class RefMccUpdate(BaseModel):
 
 class RefWhenCardCharged(BaseModel):
     
-    when_card_charged_id:str=Field(max_length=15)
+    when_card_charged_id:int
     name:str=Field(max_length=30)
     created_on:Optional[datetime]
     modified_on:Optional[datetime]
@@ -756,7 +757,7 @@ class RefWhenCardCharged(BaseModel):
     
 class RefWhenCardChargedCreate(BaseModel):
     
-    when_card_charged_id:str=Field(max_length=15)
+    when_card_charged_id:int
     name:str=Field(max_length=30)
     created_by:int
     class Config:
@@ -764,7 +765,7 @@ class RefWhenCardChargedCreate(BaseModel):
     
 class RefWhenCardChargedUpdate(BaseModel):
     
-    when_card_charged_id:str=Field(max_length=15)
+    when_card_charged_id:int
     name:str=Field(max_length=30)
     modified_by:Optional[int]
     class Config:
@@ -773,7 +774,7 @@ class RefWhenCardChargedUpdate(BaseModel):
 
 class RefServicesProvidedIn(BaseModel):
     
-    services_provided_in_id:str=Field(max_length=15)
+    services_provided_in_id:int
     name:str=Field(max_length=30)
     created_on:Optional[datetime]
     modified_on:Optional[datetime]
@@ -785,7 +786,7 @@ class RefServicesProvidedIn(BaseModel):
     
 class RefServicesProvidedInCreate(BaseModel):
     
-    services_provided_in_id:str=Field(max_length=15)
+    services_provided_in_id:int
     name:str=Field(max_length=30)
     created_by:int
     class Config:
@@ -793,7 +794,7 @@ class RefServicesProvidedInCreate(BaseModel):
     
 class RefServicesProvidedInUpdate(BaseModel):
     
-    services_provided_in_id:str=Field(max_length=15)
+    services_provided_in_id:int
     name:str=Field(max_length=30)
     modified_by:Optional[int]
     class Config:
@@ -907,6 +908,7 @@ class Merchant(BaseModel):
     dba_name:str=Field(max_length=100)
     legal_name:Optional[str]=Field(max_length=100)
     tax_filing_name:Optional[str]=Field(max_length=100)
+    tax_id_token:Optional[str]=Field(max_length=100)
     business_start_date:Optional[str]
     website:Optional[str]=Field(max_length=150)
     phone_number:Optional[str]=Field(max_length=15)
@@ -940,9 +942,11 @@ class Merchant(BaseModel):
     back_end_platform_ref:Optional[RefBackEndPlatform]
     customer_id:int
     customer_ref:Optional[Customer]
-    merchant_status_id:str=Field(max_length=15)
+    merchant_status_id:int
     merchant_status_ref:Optional[RefMerchantStatus]
     priority:bool
+    branding_id:int
+    branding_ref:Optional[Branding]
     created_on:Optional[datetime]
     modified_on:Optional[datetime]
     created_by:int
@@ -979,7 +983,7 @@ class MerchantCreate(BaseModel):
     ownership_type:Optional[str]=Field(max_length=15)
     back_end_platform_id:Optional[str]=Field(max_length=15)
     customer_id:int
-    merchant_status_id:str=Field(max_length=15)
+    merchant_status_id:int
     priority:bool
     created_by:int
     class Config:
@@ -1013,7 +1017,7 @@ class MerchantUpdate(BaseModel):
     ownership_type:Optional[str]=Field(max_length=15)
     back_end_platform_id:Optional[str]=Field(max_length=15)
     customer_id:int
-    merchant_status_id:str=Field(max_length=15)
+    merchant_status_id:int
     priority:bool
     modified_by:Optional[int]
     class Config:
@@ -1028,7 +1032,7 @@ class Ticket(BaseModel):
     merchant_id:int
     merchant_ref:Optional[Merchant]
     description:str
-    ticket_status_id:str=Field(max_length=15)
+    ticket_status_id:int
     ticket_status_ref:Optional[RefTicketStatus]
     visible_to_merchant:bool
     submitted_by:int
@@ -1047,7 +1051,7 @@ class TicketCreate(BaseModel):
     ticket_reason_id:int
     merchant_id:int
     description:str
-    ticket_status_id:str=Field(max_length=15)
+    ticket_status_id:int
     visible_to_merchant:bool
     submitted_by:int
     assigned_to:Optional[int]
@@ -1061,7 +1065,7 @@ class TicketUpdate(BaseModel):
     ticket_reason_id:int
     merchant_id:int
     description:str
-    ticket_status_id:str=Field(max_length=15)
+    ticket_status_id:int
     visible_to_merchant:bool
     submitted_by:int
     assigned_to:Optional[int]
@@ -1078,7 +1082,7 @@ class Attachment(BaseModel):
     merchant_ref:Optional[Merchant]
     ticket_id:Optional[int]
     ticket_ref:Optional[Ticket]
-    attachment_type_id:str=Field(max_length=15)
+    attachment_type_id:int
     attachment_type_ref:Optional[RefAttachmentType]
     file_pointer:str=Field(max_length=250)
     created_on:Optional[datetime]
@@ -1093,7 +1097,7 @@ class AttachmentCreate(BaseModel):
     
     merchant_id:int
     ticket_id:Optional[int]
-    attachment_type_id:str=Field(max_length=15)
+    attachment_type_id:int
     file_pointer:str=Field(max_length=250)
     created_by:int
     class Config:
@@ -1103,7 +1107,7 @@ class AttachmentUpdate(BaseModel):
     
     merchant_id:int
     ticket_id:Optional[int]
-    attachment_type_id:str=Field(max_length=15)
+    attachment_type_id:int
     file_pointer:str=Field(max_length=250)
     modified_by:Optional[int]
     class Config:
@@ -1163,7 +1167,7 @@ class SalesPerson(BaseModel):
     name:str=Field(max_length=30)
     branding_id:Optional[int]
     branding_ref:Optional[Branding]
-    sales_person_type_id:str=Field(max_length=15)
+    sales_person_type_id:int
     sales_person_type_ref:Optional[RefSalesPersonType]
     created_on:Optional[datetime]
     modified_on:Optional[datetime]
@@ -1177,7 +1181,7 @@ class SalesPersonCreate(BaseModel):
     
     name:str=Field(max_length=30)
     branding_id:Optional[int]
-    sales_person_type_id:str=Field(max_length=15)
+    sales_person_type_id:int
     created_by:int
     class Config:
         orm_mode = True
@@ -1186,7 +1190,7 @@ class SalesPersonUpdate(BaseModel):
     
     name:str=Field(max_length=30)
     branding_id:Optional[int]
-    sales_person_type_id:str=Field(max_length=15)
+    sales_person_type_id:int
     modified_by:Optional[int]
     class Config:
         orm_mode = True
@@ -1279,7 +1283,7 @@ class MerchantAddress(BaseModel):
     merchant_address_id:int
     merchant_id:int
     merchant_ref:Optional[Merchant]
-    address_type_id:str=Field(max_length=15)
+    address_type_id:int
     address_type_ref:Optional[RefAddressType]
     address1:str=Field(max_length=50)
     address2:Optional[str]=Field(max_length=50)
@@ -1298,7 +1302,7 @@ class MerchantAddress(BaseModel):
 class MerchantAddressCreate(BaseModel):
     
     merchant_id:int
-    address_type_id:str=Field(max_length=15)
+    address_type_id:int
     address1:str=Field(max_length=50)
     address2:Optional[str]=Field(max_length=50)
     city:str=Field(max_length=30)
@@ -1311,7 +1315,7 @@ class MerchantAddressCreate(BaseModel):
 class MerchantAddressUpdate(BaseModel):
     
     merchant_id:int
-    address_type_id:str=Field(max_length=15)
+    address_type_id:int
     address1:str=Field(max_length=50)
     address2:Optional[str]=Field(max_length=50)
     city:str=Field(max_length=30)
@@ -1380,14 +1384,14 @@ class MerchantContact(BaseModel):
     phone:Optional[str]=Field(max_length=15)
     email:Optional[str]=Field(max_length=50)
     ssn_token:Optional[str]=Field(max_length=50)
-    d_o_b:Optional[str]
-    d_l_number:Optional[str]=Field(max_length=30)
-    d_l_state_id:Optional[str]=Field(max_length=2)
-    d_l_state_ref:Optional[RefState]
+    dob:Optional[str]
+    dl_number:Optional[str]=Field(max_length=30)
+    dl_state_id:Optional[int]
+    dl_state_ref:Optional[RefState]
     res_address1:Optional[str]=Field(max_length=50)
     res_address2:Optional[str]=Field(max_length=50)
     res_city:Optional[str]=Field(max_length=30)
-    res_state_id:Optional[str]=Field(max_length=2)
+    res_state_id:Optional[int]
     res_state_ref:Optional[RefState]
     res_zip:Optional[str]=Field(max_length=5)
     is_owner:bool
@@ -1411,12 +1415,12 @@ class MerchantContactCreate(BaseModel):
     email:Optional[str]=Field(max_length=50)
     ssn_token:Optional[str]=Field(max_length=50)
     d_o_b:Optional[str]
-    d_l_number:Optional[str]=Field(max_length=30)
-    d_l_state_id:Optional[str]=Field(max_length=2)
+    dl_number:Optional[str]=Field(max_length=30)
+    dl_state_id:Optional[int]
     res_address1:Optional[str]=Field(max_length=50)
     res_address2:Optional[str]=Field(max_length=50)
     res_city:Optional[str]=Field(max_length=30)
-    res_state_id:Optional[str]=Field(max_length=2)
+    res_state_id:Optional[int]
     res_zip:Optional[str]=Field(max_length=5)
     is_owner:bool
     is_signer:bool
@@ -1436,11 +1440,11 @@ class MerchantContactUpdate(BaseModel):
     ssn_token:Optional[str]=Field(max_length=50)
     d_o_b:Optional[str]
     d_l_number:Optional[str]=Field(max_length=30)
-    d_l_state_id:Optional[str]=Field(max_length=2)
+    dl_state_id:Optional[int]
     res_address1:Optional[str]=Field(max_length=50)
     res_address2:Optional[str]=Field(max_length=50)
     res_city:Optional[str]=Field(max_length=30)
-    res_state_id:Optional[str]=Field(max_length=2)
+    res_state_id:Optional[int]
     res_zip:Optional[str]=Field(max_length=5)
     is_owner:bool
     is_signer:bool
@@ -1598,7 +1602,7 @@ class Pricing(BaseModel):
     pricing_id:int
     order_line_id:Optional[int]
     order_line_ref:Optional[OrderLine]
-    card_type_id:str=Field(max_length=15)
+    card_type_id:int
     card_type_ref:Optional[RefCardType]
     qual_rate:float
     mid_qual_rate:float
@@ -1615,7 +1619,7 @@ class Pricing(BaseModel):
 class PricingCreate(BaseModel):
     
     order_line_id:Optional[int]
-    card_type_id:str=Field(max_length=15)
+    card_type_id:int
     qual_rate:float
     mid_qual_rate:float
     non_qual_rate:float
@@ -1627,7 +1631,7 @@ class PricingCreate(BaseModel):
 class PricingUpdate(BaseModel):
     
     order_line_id:Optional[int]
-    card_type_id:str=Field(max_length=15)
+    card_type_id:int
     qual_rate:float
     mid_qual_rate:float
     non_qual_rate:float
@@ -1925,7 +1929,7 @@ class Users(BaseModel):
     first_name:str=Field(max_length=30)
     last_name:str=Field(max_length=30)
     email:str=Field(max_length=50)
-    user_type_id:str=Field(max_length=15)
+    user_type_id:int
     user_type_ref:Optional[RefUserType]
     sales_office_id:Optional[int]
     sales_office_ref:Optional[SalesOffice]
@@ -1950,7 +1954,7 @@ class UsersCreate(BaseModel):
     first_name:str=Field(max_length=30)
     last_name:str=Field(max_length=30)
     email:str=Field(max_length=50)
-    user_type_id:str=Field(max_length=15)
+    user_type_id:int
     sales_office_id:Optional[int]
     sales_person_id:Optional[int]
     customer_id:Optional[int]
@@ -1966,7 +1970,7 @@ class UsersUpdate(BaseModel):
     first_name:str=Field(max_length=30)
     last_name:str=Field(max_length=30)
     email:str=Field(max_length=50)
-    user_type_id:str=Field(max_length=15)
+    user_type_id:int
     sales_office_id:Optional[int]
     sales_person_id:Optional[int]
     customer_id:Optional[int]

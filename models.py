@@ -23,7 +23,7 @@ class RefOrderStatusModel(Base):
 
 class RefRefundPolicyModel(Base):
     __tablename__ = "ref_refund_policy"
-    refund_policy_id=Column(String(15),primary_key=True,nullable=False)
+    refund_policy_id=Column(Integer,primary_key=True,nullable=False)
     
     name=Column(String(30),nullable=False)
     
@@ -38,7 +38,7 @@ class RefRefundPolicyModel(Base):
 
 class RefProductDeliveryModel(Base):
     __tablename__ = "ref_product_delivery"
-    product_delivery_id=Column(String(15),primary_key=True,nullable=False)
+    product_delivery_id=Column(Integer,primary_key=True,nullable=False)
     
     name=Column(String(30),nullable=False)
     
@@ -53,7 +53,7 @@ class RefProductDeliveryModel(Base):
 
 class RefOwnershipTypeModel(Base):
     __tablename__ = "ref_ownership_type"
-    ownership_type_id=Column(String(15),primary_key=True,nullable=False)
+    ownership_type_id=Column(Integer,primary_key=True,nullable=False)
     
     name=Column(String(30),nullable=False)
     
@@ -68,7 +68,7 @@ class RefOwnershipTypeModel(Base):
 
 class RefMerchantStatusModel(Base):
     __tablename__ = "ref_merchant_status"
-    merchant_status_id=Column(String(15),primary_key=True,nullable=False)
+    merchant_status_id=Column(Integer,primary_key=True,nullable=False)
     
     name=Column(String(30),nullable=False)
     
@@ -98,7 +98,7 @@ class RefPermissionModel(Base):
 
 class RefTicketStatusModel(Base):
     __tablename__ = "ref_ticket_status"
-    ticket_status_id=Column(String(15),primary_key=True,nullable=False)
+    ticket_status_id=Column(Integer,primary_key=True,nullable=False)
     
     name=Column(String(30),nullable=False)
     
@@ -115,7 +115,7 @@ class RefFeeModel(Base):
     __tablename__ = "ref_fee"
     fee_id=Column(Integer,primary_key=True,nullable=False)
     
-    fee_category=Column(String(15),nullable=False)
+    fee_category=Column(Integer,nullable=False)
     
     name=Column(String(30),nullable=False)
     
@@ -130,7 +130,7 @@ class RefFeeModel(Base):
 
 class RefAddressTypeModel(Base):
     __tablename__ = "ref_address_type"
-    address_type_id=Column(String(15),primary_key=True,nullable=False)
+    address_type_id=Column(Integer,primary_key=True,nullable=False)
     
     name=Column(String(30),nullable=False)
     
@@ -175,7 +175,7 @@ class MerchantBoardingPlatformModel(Base):
 
 class RefBackEndPlatformModel(Base):
     __tablename__ = "ref_back_end_platform"
-    back_end_platform_id=Column(String(15),primary_key=True,nullable=False)
+    back_end_platform_id=Column(Integer,primary_key=True,nullable=False)
     
     name=Column(String(30),nullable=False)
     
@@ -195,7 +195,7 @@ class RefMbpBackEndModel(Base):
     mbp_id=Column(Integer,ForeignKey("merchant_boarding_platform.mbp_id"),nullable=False)
     
     mbp_ref=relationship(MerchantBoardingPlatformModel)
-    back_end_platform_id=Column(String(15),ForeignKey("ref_back_end_platform.back_end_platform_id"),nullable=False)
+    back_end_platform_id=Column(Integer,ForeignKey("ref_back_end_platform.back_end_platform_id"),nullable=False)
     
     back_end_platform_ref=relationship(RefBackEndPlatformModel)
     created_on=Column(DateTime,nullable=False,server_default=func.now())
@@ -267,7 +267,7 @@ class RefScheduleAModel(Base):
     __tablename__ = "ref_schedule_a"
     schedule_a_id=Column(Integer,primary_key=True,nullable=False)
     
-    name=Column(String(30),nullable=False)
+    name=Column(String(100),nullable=False)
     
     cost_type=Column(String(15),nullable=False)
     
@@ -282,7 +282,7 @@ class RefScheduleAModel(Base):
 
 class RefProcessorModel(Base):
     __tablename__ = "ref_processor"
-    processor_id=Column(String(15),primary_key=True,nullable=False)
+    processor_id=Column(Integer,primary_key=True,nullable=False)
     
     name=Column(String(30),nullable=False)
     
@@ -302,7 +302,7 @@ class RefScheduleAMapModel(Base):
     schedule_a_id=Column(Integer,ForeignKey("ref_schedule_a.schedule_a_id"),nullable=False)
     
     schedule_a_ref=relationship(RefScheduleAModel)
-    processor_id=Column(String(15),ForeignKey("ref_processor.processor_id"),nullable=False)
+    processor_id=Column(Integer,ForeignKey("ref_processor.processor_id"),nullable=False)
     
     processor_ref=relationship(RefProcessorModel)
     fee_code=Column(String(30),nullable=False)
@@ -318,7 +318,7 @@ class RefScheduleAMapModel(Base):
 
 class RefCardTypeModel(Base):
     __tablename__ = "ref_card_type"
-    card_type_id=Column(String(15),primary_key=True,nullable=False)
+    card_type_id=Column(Integer,primary_key=True,nullable=False)
     
     name=Column(String(30),nullable=False)
     
@@ -333,9 +333,9 @@ class RefCardTypeModel(Base):
 
 class RefAttachmentTypeModel(Base):
     __tablename__ = "ref_attachment_type"
-    attachment_type_id=Column(String(15),primary_key=True,nullable=False)
+    attachment_type_id=Column(Integer,primary_key=True,nullable=False)
     
-    name=Column(String(30),nullable=False)
+    name=Column(String(50),nullable=False)
     
     created_on=Column(DateTime,nullable=False,server_default=func.now())
     
@@ -348,8 +348,8 @@ class RefAttachmentTypeModel(Base):
 
 class RefStateModel(Base):
     __tablename__ = "ref_state"
-    state_id=Column(String(2),primary_key=True,nullable=False)
-    
+    state_id=Column(Integer,primary_key=True,nullable=False)
+    state_code=Column(String(2), unique=True)
     name=Column(String(30),nullable=False)
     
     created_on=Column(DateTime,nullable=False,server_default=func.now())
@@ -363,7 +363,7 @@ class RefStateModel(Base):
 
 class RefUserTypeModel(Base):
     __tablename__ = "ref_user_type"
-    user_type_id=Column(String(15),primary_key=True,nullable=False)
+    user_type_id=Column(Integer,primary_key=True,nullable=False)
     
     name=Column(String(30),nullable=False)
     
@@ -378,7 +378,7 @@ class RefUserTypeModel(Base):
 
 class RefSalesPersonTypeModel(Base):
     __tablename__ = "ref_sales_person_type"
-    sales_person_type_id=Column(String(15),primary_key=True,nullable=False)
+    sales_person_type_id=Column(Integer,primary_key=True,nullable=False)
     
     name=Column(String(30),nullable=False)
     
@@ -395,7 +395,7 @@ class RefMccModel(Base):
     __tablename__ = "ref_mcc"
     mcc_id=Column(Integer,primary_key=True,nullable=False)
     
-    name=Column(String(100),nullable=False)
+    name=Column(String(255),nullable=False)
     
     mcc_code=Column(String(15),nullable=False)
     
@@ -410,9 +410,9 @@ class RefMccModel(Base):
 
 class RefWhenCardChargedModel(Base):
     __tablename__ = "ref_when_card_charged"
-    when_card_charged_id=Column(String(15),primary_key=True,nullable=False)
+    when_card_charged_id=Column(Integer,primary_key=True,nullable=False)
     
-    name=Column(String(30),nullable=False)
+    name=Column(String(50),nullable=False)
     
     created_on=Column(DateTime,nullable=False,server_default=func.now())
     
@@ -425,7 +425,7 @@ class RefWhenCardChargedModel(Base):
 
 class RefServicesProvidedInModel(Base):
     __tablename__ = "ref_services_provided_in"
-    services_provided_in_id=Column(String(15),primary_key=True,nullable=False)
+    services_provided_in_id=Column(Integer,primary_key=True,nullable=False)
     
     name=Column(String(30),nullable=False)
     
@@ -506,7 +506,7 @@ class MerchantModel(Base):
     legal_name=Column(String(100))
     
     tax_filing_name=Column(String(100))
-    
+    tax_id_token=Column(String(100))
     business_start_date=Column(String(8))
     
     website=Column(String(150))
@@ -517,7 +517,7 @@ class MerchantModel(Base):
     
     business_license_number=Column(String(30))
     
-    business_license_state_id=Column(String(2),ForeignKey("ref_state.state_id"))
+    business_license_state_id=Column(Integer,ForeignKey("ref_state.state_id"))
     
     business_license_state_ref=relationship(RefStateModel)
     rep_code=Column(String(15),ForeignKey("rep_code_boarding_platform.rep_code"),nullable=False)
@@ -528,10 +528,10 @@ class MerchantModel(Base):
     mcc_ref=relationship(RefMccModel)
     business_desc=Column(Text)
     
-    when_card_charged_id=Column(String(15),ForeignKey("ref_when_card_charged.when_card_charged_id"))
+    when_card_charged_id=Column(Integer,ForeignKey("ref_when_card_charged.when_card_charged_id"))
     
     when_card_charged_ref=relationship(RefWhenCardChargedModel)
-    services_provided_in_id=Column(String(15),ForeignKey("ref_services_provided_in.services_provided_in_id"))
+    services_provided_in_id=Column(Integer,ForeignKey("ref_services_provided_in.services_provided_in_id"))
     
     services_provided_in_ref=relationship(RefServicesProvidedInModel)
     annual_volume=Column(Integer)
@@ -540,12 +540,12 @@ class MerchantModel(Base):
     
     high_ticket=Column(Integer)
     
-    refund_policy_id=Column(String(15),ForeignKey("ref_refund_policy.refund_policy_id"))
+    refund_policy_id=Column(Integer,ForeignKey("ref_refund_policy.refund_policy_id"))
     
     refund_policy_ref=relationship(RefRefundPolicyModel)
     is_seasonal=Column(Boolean,default=False,nullable=False)
     
-    product_delivery_id=Column(String(15),ForeignKey("ref_product_delivery.product_delivery_id"))
+    product_delivery_id=Column(Integer,ForeignKey("ref_product_delivery.product_delivery_id"))
     
     product_delivery_ref=relationship(RefProductDeliveryModel)
     in_person_pct=Column(Integer)
@@ -554,16 +554,16 @@ class MerchantModel(Base):
     
     telephone_pct=Column(Integer)
     
-    ownership_type=Column(String(15),ForeignKey("ref_ownership_type.ownership_type_id"))
+    ownership_type=Column(Integer,ForeignKey("ref_ownership_type.ownership_type_id"))
     
     ownership_type_ref=relationship(RefOwnershipTypeModel)
-    back_end_platform_id=Column(String(15),ForeignKey("ref_back_end_platform.back_end_platform_id"))
+    back_end_platform_id=Column(Integer,ForeignKey("ref_back_end_platform.back_end_platform_id"))
     
     back_end_platform_ref=relationship(RefBackEndPlatformModel)
     customer_id=Column(Integer,ForeignKey("customer.customer_id"),nullable=False)
     
     customer_ref=relationship(CustomerModel)
-    merchant_status_id=Column(String(15),ForeignKey("ref_merchant_status.merchant_status_id"),nullable=False)
+    merchant_status_id=Column(Integer,ForeignKey("ref_merchant_status.merchant_status_id"),nullable=False)
     
     merchant_status_ref=relationship(RefMerchantStatusModel)
     priority=Column(Boolean,default=False,nullable=False)
@@ -589,7 +589,7 @@ class TicketModel(Base):
     merchant_ref=relationship(MerchantModel)
     description=Column(Text,nullable=False)
     
-    ticket_status_id=Column(String(15),ForeignKey("ref_ticket_status.ticket_status_id"),nullable=False)
+    ticket_status_id=Column(Integer,ForeignKey("ref_ticket_status.ticket_status_id"),nullable=False)
     
     ticket_status_ref=relationship(RefTicketStatusModel)
     visible_to_merchant=Column(Boolean,default=False,nullable=False)
@@ -619,7 +619,7 @@ class AttachmentModel(Base):
     ticket_id=Column(Integer,ForeignKey("ticket.ticket_id"))
     
     ticket_ref=relationship(TicketModel)
-    attachment_type_id=Column(String(15),ForeignKey("ref_attachment_type.attachment_type_id"),nullable=False)
+    attachment_type_id=Column(Integer,ForeignKey("ref_attachment_type.attachment_type_id"),nullable=False)
     
     attachment_type_ref=relationship(RefAttachmentTypeModel)
     file_pointer=Column(String(250),nullable=False)
@@ -648,7 +648,7 @@ class SalesOfficeModel(Base):
     
     city=Column(String(30))
     
-    state_id=Column(String(2),ForeignKey("ref_state.state_id"))
+    state_id=Column(Integer,ForeignKey("ref_state.state_id"))
     
     state_ref=relationship(RefStateModel)
     zip=Column(String(5))
@@ -671,7 +671,7 @@ class SalesPersonModel(Base):
     branding_id=Column(Integer,ForeignKey("branding.branding_id"))
     
     branding_ref=relationship(BrandingModel)
-    sales_person_type_id=Column(String(15),ForeignKey("ref_sales_person_type.sales_person_type_id"),nullable=False)
+    sales_person_type_id=Column(Integer,ForeignKey("ref_sales_person_type.sales_person_type_id"),nullable=False)
     
     sales_person_type_ref=relationship(RefSalesPersonTypeModel)
     created_on=Column(DateTime,nullable=False,server_default=func.now())
@@ -740,7 +740,7 @@ class MerchantAddressModel(Base):
     merchant_id=Column(Integer,ForeignKey("merchant.merchant_id"),nullable=False)
     
     merchant_ref=relationship(MerchantModel)
-    address_type_id=Column(String(15),ForeignKey("ref_address_type.address_type_id"),nullable=False)
+    address_type_id=Column(Integer,ForeignKey("ref_address_type.address_type_id"),nullable=False)
     
     address_type_ref=relationship(RefAddressTypeModel)
     address1=Column(String(50),nullable=False)
@@ -749,7 +749,7 @@ class MerchantAddressModel(Base):
     
     city=Column(String(30),nullable=False)
     
-    state_id=Column(String(2),ForeignKey("ref_state.state_id"),nullable=False)
+    state_id=Column(Integer,ForeignKey("ref_state.state_id"),nullable=False)
     
     state_ref=relationship(RefStateModel)
     zip=Column(String(5),nullable=False)
@@ -772,7 +772,7 @@ class MerchantBankModel(Base):
     merchant_ref=relationship(MerchantModel)
     bank_name=Column(String(30))
     
-    bank_account_type=Column(String(15),nullable=False)
+    bank_account_type=Column(Integer,nullable=False)
     
     usage=Column(String(30),nullable=False)
     
@@ -812,20 +812,22 @@ class MerchantContactModel(Base):
     
     ssn_token=Column(String(50))
     
-    d_o_b=Column(Date)
+    dob=Column(Date)
     
-    d_l_number=Column(String(30))
+    dl_number=Column(String(30))
     
-    d_l_state_id=Column(String(2),ForeignKey("ref_state.state_id"))
+    dl_state_id=Column(Integer,ForeignKey("ref_state.state_id"))
     
-    #d_l_state_ref=relationship(RefStateModel)
+    dl_state_ref=relationship(RefStateModel)
     res_address1=Column(String(50))
     
     res_address2=Column(String(50))
     
     res_city=Column(String(30))
     
-    res_state_id=Column(String(2),ForeignKey("ref_state.state_id"))
+    # TODO, figure out why there cannot be two FK dl_state_ref, res_state_ref
+
+    #res_state_id=Column(Integer,ForeignKey("ref_state.state_id"))
     
     #res_state_ref=relationship(RefStateModel)
     res_zip=Column(String(5))
@@ -937,7 +939,7 @@ class PricingModel(Base):
     order_line_id=Column(Integer,ForeignKey("order_line.order_line_id"))
     
     order_line_ref=relationship(OrderLineModel)
-    card_type_id=Column(String(15),ForeignKey("ref_card_type.card_type_id"),nullable=False)
+    card_type_id=Column(Integer,ForeignKey("ref_card_type.card_type_id"),nullable=False)
     
     card_type_ref=relationship(RefCardTypeModel)
     qual_rate=Column(Numeric,nullable=False)
@@ -1138,9 +1140,11 @@ class UsersModel(Base):
     
     email=Column(String(50),nullable=False)
     
-    user_type_id=Column(String(15),ForeignKey("ref_user_type.user_type_id"),nullable=False)
+    user_type_id=Column(Integer,ForeignKey("ref_user_type.user_type_id"),nullable=False)
     
-    user_type_ref=relationship(RefUserTypeModel)
+    # TODO figure out how to lazy load FK data
+
+    user_type_ref=relationship(RefUserTypeModel, lazy='select')
     sales_office_id=Column(Integer,ForeignKey("sales_office.sales_office_id"))
     
     sales_office_ref=relationship(SalesOfficeModel)
